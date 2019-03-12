@@ -312,7 +312,6 @@ drop table if exists user_admin;
 create table user_admin
 (
    id                   int not null auto_increment comment '用户管理id',
-   enterprise_id        int not null default -1 comment '企业id',
    user_id              int not null default -1 comment '用户id',
    admin_name           varchar(30) not null default '' comment '管理名称',
    admin_type           int(1) not null default 0 comment '管理类型 1-主管理员, 2-子管理员, 3-负责人, 4-主管',

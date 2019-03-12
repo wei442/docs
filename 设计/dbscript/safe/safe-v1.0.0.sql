@@ -295,7 +295,7 @@ create table user_app_login_log
    user_name_en         varchar(50) not null default '' comment '用户英文名称',
    login_type           int(1) not null default 1 comment '登录类型 1-登录, 2-退出',
    login_time           datetime not null comment '注册或登录时间',
-   log_type             int(1) not null default 1 comment '日志类型 1-app, 2-微信公众号, 3-支付宝',
+   log_type             int(1) not null default 1 comment '日志类型 1-app, 2支付宝, 3-微信公众号, 4-微信小程序',
    login_ip             varchar(20) not null default '' comment '登录ip',
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',

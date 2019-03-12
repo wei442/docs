@@ -418,7 +418,7 @@ create table user_title
 (
    id                   int not null auto_increment comment '用户职务id',
    user_id              int not null default -1 comment '用户id',
-   post_id              int not null default -1 comment '岗位id',
+   title_id             int not null default -1 comment '职务id',
    created              varchar(30) not null default '' comment '创建人',
    updated              varchar(30) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',

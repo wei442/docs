@@ -171,7 +171,6 @@ drop table if exists dict_item;
 create table dict_item
 (
    id                   int not null auto_increment comment '字典子项id',
-   enterprise_id        int not null default -1 comment '企业id',
    dict_id              int not null default -1 comment '字典id',
    item_name            varchar(100) not null comment '字典子项名称',
    item_alias           varchar(100) not null comment '字典子项别名',

@@ -438,6 +438,7 @@ drop table if exists quality;
 create table quality
 (
    id                   int not null auto_increment comment '资质id',
+   enterprise_id        int not null default -1 comment '企业id',
    quality_name         varchar(100) not null default '' comment '资质名称',
    is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
    remark               varchar(200) not null default '' comment '备注',

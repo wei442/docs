@@ -236,7 +236,6 @@ create table user_info
    id                   int not null auto_increment comment '用户id',
    enterprise_id        int not null default -1 comment '企业id',
    user_account         varchar(50) not null default '' comment '用户账号',
-   user_password        varchar(100) not null default '' comment '用户密码',
    user_name            varchar(50) not null default '' comment '用户名称',
    user_name_en         varchar(50) not null default '' comment '用户英文名称',
    nick_name            varchar(50) not null default '' comment '昵称',
@@ -277,6 +276,21 @@ create table user_app_login
 );
 
 alter table user_app_login comment '用户应用登录表';
+
+drop table if exists user_app_password;
+
+/*==============================================================*/
+/* Table: user_app_password                                     */
+/*==============================================================*/
+create table user_app_password
+(
+   id                   int not null auto_increment comment '用户应用密码id',
+   user_id              int not null default -1 comment '用户id',
+   password             varchar(64) not null default '' comment '用户应用密码',
+   primary key (id)
+);
+
+alter table user_app_password comment '用户应用密码表';
 
 drop table if exists user_app_login_log;
 
@@ -324,6 +338,21 @@ create table user_admin
 );
 
 alter table user_admin comment '用户管理表';
+
+drop table if exists user_admin_password;
+
+/*==============================================================*/
+/* Table: user_admin_password                                   */
+/*==============================================================*/
+create table user_admin_password
+(
+   id                   int not null auto_increment comment '用户管理密码id',
+   user_id              int not null default -1 comment '用户id',
+   password             varchar(64) not null default '' comment '用户管理密码',
+   primary key (id)
+);
+
+alter table user_admin_password comment '用户管理密码表';
 
 drop table if exists user_admin_login;
 

@@ -42,7 +42,6 @@ create table base_user
    user_account         varchar(100) not null default '' comment '用户账号',
    user_name            varchar(100) not null default '' comment '用户名称',
    user_name_en         varchar(100) not null default '' comment '用户英文名称',
-   user_password        varchar(100) not null default '' comment '用户密码',
    user_type            int(1) not null default 1 comment '用户类型',
    user_status          int(1) not null default 1 comment '用户状态: 1-正常, 2-冻结, 3-注销',
    user_email           varchar(30) not null default '' comment '用户邮箱',
@@ -58,6 +57,23 @@ create table base_user
 );
 
 alter table base_user comment '基础用户表';
+
+drop table if exists base_user_password;
+
+/*==============================================================*/
+/* Table: base_user_password                                    */
+/*==============================================================*/
+create table base_user_password
+(
+   id                   int not null auto_increment comment '基础用户id',
+   base_user_id         int not null default -1 comment '基础用户id',
+   user_password        varchar(100) not null default '' comment '用户密码',
+   create_time          datetime comment '创建时间',
+   update_time          datetime comment '更新时间',
+   primary key (id)
+);
+
+alter table base_user_password comment '基础用户密码表';
 
 drop table if exists base_user_login;
 
@@ -251,10 +267,28 @@ create table user_info
    updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
-   primary key (id)
+   primary key (id),
+   unique key uk_user_account (user_account)
 );
 
 alter table user_info comment '用户信息表';
+
+drop table if exists user_app_password;
+
+/*==============================================================*/
+/* Table: user_app_password                                     */
+/*==============================================================*/
+create table user_app_password
+(
+   id                   int not null auto_increment comment '用户应用密码id',
+   user_id              int not null default -1 comment '用户id',
+   password             varchar(64) not null default '' comment '用户应用密码',
+   create_time          datetime comment '创建时间',
+   update_time          datetime comment '更新时间',
+   primary key (id)
+);
+
+alter table user_app_password comment '用户应用密码表';
 
 drop table if exists user_app_login;
 
@@ -276,21 +310,6 @@ create table user_app_login
 );
 
 alter table user_app_login comment '用户应用登录表';
-
-drop table if exists user_app_password;
-
-/*==============================================================*/
-/* Table: user_app_password                                     */
-/*==============================================================*/
-create table user_app_password
-(
-   id                   int not null auto_increment comment '用户应用密码id',
-   user_id              int not null default -1 comment '用户id',
-   password             varchar(64) not null default '' comment '用户应用密码',
-   primary key (id)
-);
-
-alter table user_app_password comment '用户应用密码表';
 
 drop table if exists user_app_login_log;
 
@@ -349,6 +368,8 @@ create table user_admin_password
    id                   int not null auto_increment comment '用户管理密码id',
    user_id              int not null default -1 comment '用户id',
    password             varchar(64) not null default '' comment '用户管理密码',
+   create_time          datetime comment '创建时间',
+   update_time          datetime comment '更新时间',
    primary key (id)
 );
 

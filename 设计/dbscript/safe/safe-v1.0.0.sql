@@ -67,7 +67,7 @@ create table base_user_password
 (
    id                   int not null auto_increment comment '基础用户id',
    base_user_id         int not null default -1 comment '基础用户id',
-   user_password        varchar(100) not null default '' comment '用户密码',
+   password             varchar(64) not null default '' comment '用户密码',
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
    primary key (id)

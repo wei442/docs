@@ -31,12 +31,12 @@ create table enterprise
 
 alter table enterprise comment '企业表';
 
-drop table if exists base_user;
+drop table if exists base_user_info;
 
 /*==============================================================*/
 /* Table: base_user                                             */
 /*==============================================================*/
-create table base_user
+create table base_user_info
 (
    id                   int not null auto_increment comment '基础用户id',
    user_account         varchar(100) not null default '' comment '用户账号',
@@ -56,7 +56,7 @@ create table base_user
    unique key uk_user_account (user_account)
 );
 
-alter table base_user comment '基础用户表';
+alter table base_user_info comment '基础用户信息表';
 
 drop table if exists base_user_password;
 

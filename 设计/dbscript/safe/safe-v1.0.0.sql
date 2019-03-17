@@ -34,7 +34,7 @@ alter table enterprise comment '企业表';
 drop table if exists base_user_info;
 
 /*==============================================================*/
-/* Table: base_user                                             */
+/* Table: base_user_info                                        */
 /*==============================================================*/
 create table base_user_info
 (
@@ -427,6 +427,7 @@ drop table if exists user_org;
 create table user_org
 (
    id                   int not null auto_increment comment '用户机构id',
+   enterprise_id        int not null default -1 comment '企业id',
    user_id              int not null default -1 comment '用户id',
    org_id               int not null default -1 comment '机构id',
    created              varchar(30) not null default '' comment '创建人',
@@ -446,6 +447,7 @@ drop table if exists user_post;
 create table user_post
 (
    id                   int not null auto_increment comment '用户岗位id',
+   enterprise_id        int not null default -1 comment '企业id',
    user_id              int not null default -1 comment '用户id',
    post_id              int not null default -1 comment '岗位id',
    created              varchar(30) not null default '' comment '创建人',
@@ -465,6 +467,7 @@ drop table if exists user_title;
 create table user_title
 (
    id                   int not null auto_increment comment '用户职务id',
+   enterprise_id        int not null default -1 comment '企业id',
    user_id              int not null default -1 comment '用户id',
    title_id             int not null default -1 comment '职务id',
    created              varchar(30) not null default '' comment '创建人',
@@ -526,6 +529,7 @@ drop table if exists user_quality;
 create table user_quality
 (
    id                   int not null auto_increment comment '用户职务id',
+   enterprise_id        int not null default -1 comment '企业id',
    user_id              int not null default -1 comment '用户id',
    quality_id           int not null default -1 comment '资质id',
    is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',

@@ -299,8 +299,8 @@ create table user_app_login
 (
    id                   int not null auto_increment comment '用户应用登录id',
    user_id              int not null default -1 comment '用户id',
-   first_login          int(1) not null default 0 comment '是否首次登录 0-否, 1-是',
-   login_count          int not null default 0 comment '登录次数',
+   first_login          int(1) not null default 0 comment '是否首次登录 0-是, 1-否',
+   login_count          bigint not null default 0 comment '登录次数',
    last_pass_time       datetime not null comment '密码过期时间',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',
@@ -382,10 +382,10 @@ drop table if exists user_admin_login;
 /*==============================================================*/
 create table user_admin_login
 (
-   id                   int not null auto_increment comment '用户管理后台登录id',
+   id                   int not null auto_increment comment '用户管理登录id',
    user_id              int not null default -1 comment '用户id',
    first_login          int(1) not null default 0 comment '是否首次登录 0-是, 1-否',
-   login_count          int not null default 0 comment '登录次数',
+   login_count          bigint not null default 0 comment '登录次数',
    last_pass_time       datetime not null comment '密码过期时间',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',

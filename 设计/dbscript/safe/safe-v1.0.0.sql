@@ -85,7 +85,7 @@ create table base_user_login
 (
    id                   int not null auto_increment comment '基础用户登录id',
    base_user_id         int not null default -1 comment '基础用户id',
-   first_login          int(1) not null default 0 comment '是否首次登录 0-是, 1-否',
+   first_login          int(1) not null default 0 comment '是否首次登录 0-未登录, 1-已登录',
    login_count          int not null default 0 comment '登录次数',
    created              varchar(30) not null default '' comment '创建人',
    updated              varchar(30) not null default '' comment '更新人',
@@ -299,7 +299,7 @@ create table user_app_login
 (
    id                   int not null auto_increment comment '用户应用登录id',
    user_id              int not null default -1 comment '用户id',
-   first_login          int(1) not null default 0 comment '是否首次登录 0-是, 1-否',
+   first_login          int(1) not null default 0 comment '是否首次登录 0-未登录, 1-已登录',
    login_count          bigint not null default 0 comment '登录次数',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',
@@ -384,7 +384,7 @@ create table user_admin_login
 (
    id                   int not null auto_increment comment '用户管理登录id',
    user_id              int not null default -1 comment '用户id',
-   first_login          int(1) not null default 0 comment '是否首次登录 0-是, 1-否',
+   first_login          int(1) not null default 0 comment '是否首次登录 0-未登录, 1-已登录',
    login_count          bigint not null default 0 comment '登录次数',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',

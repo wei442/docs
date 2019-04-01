@@ -181,8 +181,7 @@ create table dict_item
    id                   int not null auto_increment comment '字典子项id',
    dict_id              int not null default -1 comment '字典id',
    item_name            varchar(100) not null comment '字典子项名称',
-   item_alias           varchar(100) not null comment '字典子项别名',
-   item_level           int(1) not null default 1 comment '字典子项级别',
+   item_type            int(1) not null default 1 comment '字典子项类型',
    item_status          int(1) not null default 1 comment '字典子项 0-无效, 1-有效',
    is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
    remark               varchar(200) not null default '' comment '备注',
@@ -194,7 +193,7 @@ create table dict_item
    primary key (id)
 );
 
-alter table dict_item comment '数据字典子项表';
+alter table dict_item comment '字典子项表';
 
 drop table if exists post;
 

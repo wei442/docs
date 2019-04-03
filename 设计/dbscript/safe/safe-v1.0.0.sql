@@ -429,6 +429,7 @@ create table user_org
    user_id              int not null default -1 comment '用户id',
    user_name            varchar(50) not null default '' comment '用户名称',
    org_id               int not null default -1 comment '机构id',
+   org_name             varchar(100) not null default '' comment '机构名称',
    created              varchar(30) not null default '' comment '创建人',
    updated              varchar(30) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
@@ -437,8 +438,6 @@ create table user_org
 );
 
 alter table user_org comment '用户机构表';
-
-drop table if exists user_post;
 
 /*==============================================================*/
 /* Table: user_post                                             */

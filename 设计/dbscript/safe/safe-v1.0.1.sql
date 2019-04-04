@@ -100,5 +100,50 @@ create table activity_attachment
 
 alter table activity_attachment comment '活动附件表';
 
+drop table if exists rule;
+
+/*==============================================================*/
+/* Table: rule                                                  */
+/*==============================================================*/
+create table rule
+(
+   id                   int not null auto_increment comment '规范文件id',
+   enterprise_id        int not null default -1 comment '企业id',
+   org_id               int not null default -1 comment '机构id',
+   org_name             varchar(100) not null default '' comment '机构名称',
+   rule_name            varchar(100) not null default '' comment '规范名称',
+   rule_no              varchar(50) not null default '' comment '规范编号',
+   key_word             varchar(50) not null default '' comment '关键字',
+   rule_category        int(1) not null default 1 comment '规范类别 1-法律, 2-法规, 3-部门规章, 4-地方性法规, 5-标准',
+   rule_type            int(1) not null default 1 comment '规范类型 1-法律法规制度, 2-安全生产管理制度, 3-安全操作规程',
+   is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
+   remark               varchar(500) not null default '' comment '备注',
+   created              varchar(50) not null default '' comment '创建人',
+   updated              varchar(50) not null default '' comment '更新人',
+   create_time          datetime comment '创建时间',
+   update_time          datetime comment '更新时间',
+   primary key (id)
+);
+
+alter table rule comment '规范文件表';
+
+drop table if exists rule_attachment;
+
+/*==============================================================*/
+/* Table: rule_attachment                                       */
+/*==============================================================*/
+create table rule_attachment
+(
+   id                   int not null auto_increment comment '规范附件id',
+   rule_id              int not null default -1 comment '规范id',
+   attachment_id        bigint not null default -1 comment '附件id',
+   attachment_url       varchar(100) not null default '' comment '附件URL',
+   create_time          datetime comment '创建时间',
+   update_time          datetime comment '更新时间',
+   primary key (id)
+);
+
+alter table rule_attachment comment '规范文件附件表';
+
 /********************** weiyong end 20181025 *******************************/
 

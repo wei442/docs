@@ -138,6 +138,8 @@ create table rule_attachment
    rule_id              int not null default -1 comment '规范id',
    attachment_id        bigint not null default -1 comment '附件id',
    attachment_url       varchar(100) not null default '' comment '附件URL',
+   created              varchar(50) not null default '' comment '创建人',
+   updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
    primary key (id)

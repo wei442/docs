@@ -71,7 +71,6 @@ create table activity
    key_word             varchar(50) not null default '' comment '关键字',
    is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
    remark               varchar(200) not null default '' comment '备注',
-   sort                 int not null default 1 comment '排序号',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
@@ -80,7 +79,6 @@ create table activity
 );
 
 alter table activity comment '安全活动表';
-
 
 drop table if exists activity_attachment;
 

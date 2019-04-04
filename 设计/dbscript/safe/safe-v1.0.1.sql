@@ -80,6 +80,27 @@ create table activity
 
 alter table activity comment '安全活动表';
 
+drop table if exists activity_comment;
+
+/*==============================================================*/
+/* Table: activity_comment                                      */
+/*==============================================================*/
+create table activity_comment
+(
+   id                   int not null auto_increment comment '活动附件id',
+   activity_id          int not null default -1 comment '活动id',
+   comments             varchar(200) not null default '' comment '留言评论',
+   score                int(2) not null default 0 comment '打分',
+   views                int not null default 0 comment '点击量',
+   created              varchar(50) not null default '' comment '创建人',
+   updated              varchar(50) not null default '' comment '更新人',
+   create_time          datetime comment '创建时间',
+   update_time          datetime comment '更新时间',
+   primary key (id)
+);
+
+alter table activity_comment comment '活动评论表';
+
 drop table if exists activity_attachment;
 
 /*==============================================================*/

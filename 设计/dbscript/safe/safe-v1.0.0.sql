@@ -584,27 +584,6 @@ create table post_attachment
 
 alter table post_attachment comment '岗位附件表';
 
-drop table if exists quality_attachment;
-
-/*==============================================================*/
-/* Table: quality_attachment                                    */
-/*==============================================================*/
-create table quality_attachment
-(
-   id                   int not null auto_increment comment '资质附件id',
-   quality_id           int not null default -1 comment '资质id',
-   attachment_url       varchar(100) not null default '' comment '附件URL',
-   is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
-   remark               varchar(200) not null default '' comment '备注',
-   created              varchar(50) not null default '' comment '创建人',
-   updated              varchar(50) not null default '' comment '更新人',
-   create_time          datetime comment '创建时间',
-   update_time          datetime comment '更新时间',
-   primary key (id)
-);
-
-alter table quality_attachment comment '资质附件表';
-
 
 
 

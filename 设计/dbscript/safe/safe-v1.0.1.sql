@@ -110,7 +110,6 @@ create table activity_attachment
 (
    id                   int not null auto_increment comment '活动附件id',
    activity_id          int not null default -1 comment '活动id',
-   attachment_id        int not null default -1 comment '附件id',
    attachment_url       varchar(100) not null default '' comment '附件URL',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',
@@ -157,7 +156,6 @@ create table rule_attachment
 (
    id                   int not null auto_increment comment '规范附件id',
    rule_id              int not null default -1 comment '规范id',
-   attachment_id        bigint not null default -1 comment '附件id',
    attachment_url       varchar(100) not null default '' comment '附件URL',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',

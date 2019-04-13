@@ -439,6 +439,8 @@ create table user_org
 
 alter table user_org comment '用户机构表';
 
+drop table if exists user_post;
+
 /*==============================================================*/
 /* Table: user_post                                             */
 /*==============================================================*/

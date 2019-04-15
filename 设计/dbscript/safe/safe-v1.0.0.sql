@@ -576,8 +576,6 @@ create table post_attachment
    post_id              int not null default -1 comment '岗位id',
    name                 varchar(50) not null default '' comment '附件名称',
    url                  varchar(100) not null default '' comment '附件url',
-   is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
-   remark               varchar(200) not null default '' comment '备注',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',

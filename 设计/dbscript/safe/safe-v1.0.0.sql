@@ -574,7 +574,8 @@ create table post_attachment
 (
    id                   int not null auto_increment comment '岗位附件id',
    post_id              int not null default -1 comment '岗位id',
-   attachment_url       varchar(100) not null default '' comment '附件URL',
+   name                 varchar(50) not null default '' comment '附件名称',
+   url                  varchar(100) not null default '' comment '附件url',
    is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
    remark               varchar(200) not null default '' comment '备注',
    created              varchar(50) not null default '' comment '创建人',
@@ -585,6 +586,7 @@ create table post_attachment
 );
 
 alter table post_attachment comment '岗位附件表';
+
 
 
 

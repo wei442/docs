@@ -191,7 +191,8 @@ create table rule_attachment
 (
    id                   int not null auto_increment comment '规范附件id',
    rule_id              int not null default -1 comment '规范id',
-   attachment_url       varchar(100) not null default '' comment '附件URL',
+   name                 varchar(50) not null default '' comment '附件名称',
+   url                  varchar(100) not null default '' comment '附件url',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',

@@ -31,7 +31,8 @@ create table org_quality_attachment
 (
    id                   int not null auto_increment comment '组织机构资质附件id',
    org_quality_id       int not null default -1 comment '组织机构资质id',
-   attachment_url       varchar(100) not null default '' comment '附件URL',
+   name                 varchar(50) not null default '' comment '附件名称',
+   url                  varchar(100) not null default '' comment '附件url',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
@@ -73,7 +74,8 @@ create table user_quality_attachment
 (
    id                   int not null auto_increment comment '用户资质附件id',
    user_quality_id      int not null default -1 comment '用户资质id',
-   attachment_url       varchar(100) not null default '' comment '附件URL',
+   name                 varchar(50) not null default '' comment '附件名称',
+   url                  varchar(100) not null default '' comment '附件url',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
@@ -143,7 +145,8 @@ create table activity_attachment
 (
    id                   int not null auto_increment comment '活动附件id',
    activity_id          int not null default -1 comment '活动id',
-   attachment_url       varchar(100) not null default '' comment '附件URL',
+   name                 varchar(50) not null default '' comment '附件名称',
+   url                  varchar(100) not null default '' comment '附件url',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',

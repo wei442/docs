@@ -156,6 +156,7 @@ create table dict
 (
    id                   int not null auto_increment comment '基础字典id',
    enterprise_id        int not null default -1 comment '企业id',
+   dict_code            varchar(10) not null default '' comment '字典编码',
    dict_name            varchar(50) not null default '' comment '字典名称',
    dict_type            int(1) not null default 1 comment '字典类型',
    dict_status          int(1) not null default 1 comment '字典状态 0-无效, 1-有效',

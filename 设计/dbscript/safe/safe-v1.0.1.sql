@@ -103,7 +103,6 @@ create table activity
    content              varchar(500) not null default '' comment '活动内容',
    experience           varchar(500) not null default '' comment '活动经验',
    lesson               varchar(500) not null default '' comment '活动教训',
-   key_word             varchar(50) not null default '' comment '关键字',
    is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
    remark               varchar(200) not null default '' comment '备注',
    created              varchar(50) not null default '' comment '创建人',

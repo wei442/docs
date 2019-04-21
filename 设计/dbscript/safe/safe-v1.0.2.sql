@@ -110,7 +110,7 @@ create table danger
    org_id               int not null default -1 comment '机构id',
    org_name             varchar(300) not null default '' comment '机构名称',
    danger_site          varchar(50) not null default '' comment '隐患地点',
-   danger_level         int(1) not null default '' comment '隐患级别 1-一般隐患, 1-重大隐患',
+   danger_level         int(1) not null default 1 comment '隐患级别 1-一般隐患, 1-重大隐患',
    danger_category      varchar(50) not null default '' comment '隐患大类',
    danger_sub_category  varchar(50) not null default '' comment '隐患小类',
    danger_time          datetime not null comment '隐患时间',

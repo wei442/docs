@@ -454,7 +454,8 @@ create table user_post
    updated              varchar(30) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
-   primary key (id)
+   primary key (id),
+   unique key uk_user_id_post_id (user_id, post_id)
 );
 
 alter table user_post comment '用户岗位表';
@@ -474,7 +475,8 @@ create table user_title
    updated              varchar(30) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
-   primary key (id)
+   primary key (id),
+   key uk_user_id_title_id (user_id, title_id)
 );
 
 alter table user_title comment '用户职务表';

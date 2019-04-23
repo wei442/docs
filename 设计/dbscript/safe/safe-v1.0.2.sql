@@ -82,8 +82,8 @@ drop table if exists risk_check;
 /*==============================================================*/
 create table risk_check
 (
-   id                   bigint not null auto_increment comment '风险排查id',
-   risk_id              int not null default -1 comment '风险d',
+   id                   int not null auto_increment comment '风险排查id',
+   risk_id              int not null default -1 comment '风险id',
    effect               varchar(200) not null default '-1' comment '排查结果',
    check_user_id        int not null default -1 comment '排查用户id',
    check_user_account   varchar(200) not null default '-1' comment '排查用户账号',
@@ -116,8 +116,8 @@ create table danger
    danger_time          datetime not null comment '隐患时间',
    danger_desc          varchar(500) not null default '' comment '隐患描述',
    danger_user_id       int not null default -1 comment '隐患发现人用户id',
-   dange_user_account   varchar(50) not null default '-1' comment '隐患发现人用户账号',
-   dange_user_name      varchar(50) not null default '-1' comment '隐患发现人用户名字',
+   danger_user_account  varchar(50) not null default '-1' comment '隐患发现人用户账号',
+   danger_user_name     varchar(50) not null default '-1' comment '隐患发现人用户名字',
    is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
    remark               varchar(500) not null default '' comment '备注',
    sort                 int not null default 1 comment '排序号',

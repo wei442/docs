@@ -476,7 +476,7 @@ create table user_title
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
    primary key (id),
-   key uk_user_id_title_id (user_id, title_id)
+   unique key uk_user_id_title_id (user_id, title_id)
 );
 
 alter table user_title comment '用户职务表';

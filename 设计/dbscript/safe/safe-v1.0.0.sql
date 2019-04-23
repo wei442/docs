@@ -428,7 +428,6 @@ create table user_org
    id                   int not null auto_increment comment '用户机构id',
    enterprise_id        int not null default -1 comment '企业id',
    user_id              int not null default -1 comment '用户id',
-   user_name            varchar(50) not null default '' comment '用户名称',
    org_id               int not null default -1 comment '机构id',
    org_name             varchar(100) not null default '' comment '机构名称',
    created              varchar(30) not null default '' comment '创建人',

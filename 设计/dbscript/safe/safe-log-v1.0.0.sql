@@ -13,9 +13,8 @@ create table base_user_login_log
    base_user_name_en    varchar(50) not null default '' comment '用户英文名称',
    login_type           int(1) not null default 1 comment '登录类型 1-登录, 2-退出',
    login_time           datetime not null comment '登录或退出时间',
+   login_mode           varchar(20) not null default '' comment '登录方式',
    login_ip             varchar(20) not null default '' comment '登录ip',
-   created              varchar(50) not null default '' comment '创建人',
-   updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
    primary key (id)
@@ -37,7 +36,8 @@ create table user_app_login_log
    user_name_en         varchar(50) not null default '' comment '用户英文名称',
    login_type           int(1) not null default 1 comment '登录类型 1-登录, 2-退出',
    login_time           datetime not null comment '注册或登录时间',
-   log_type             int(1) not null default 1 comment '日志类型 1-app, 2-微信公众号, 3-支付宝',
+   log_type             int(1) not null default 1 comment '日志类型 1-app, 2支付宝, 3-微信公众号, 4-微信小程序',
+   login_mode           varchar(20) not null default '' comment '登录方式',
    login_ip             varchar(20) not null default '' comment '登录ip',
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
@@ -83,14 +83,11 @@ create table attachment_log
    attachment_type      int(1) not null default 1 comment '附件类型 1-图片, 2-文件',
    content              varchar(300) not null default '' comment '附件内容',
    created              varchar(50) not null default '' comment '创建人',
-   updated              varchar(50) not null default '' comment '更新人',
-   create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
    primary key (id)
 );
 
 alter table attachment_log comment '附件日志表';
-
 
 /********************** weiyong end 20181025 *******************************/
 

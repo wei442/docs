@@ -593,6 +593,20 @@ alter table post_attachment comment '岗位附件表';
 
 /********************** weiyong end 20181025 *******************************/
 
+
+
+/********************** weiyong start 20181025 *******************************/
+insert into base_user_info(id,user_account,user_name,create_time,update_time) 
+values(1, 'admin', '系统管理员', now(), now());
+
+/**************** 密码:123456 ******************/
+insert into base_user_password(id,base_user_id,password,last_pass_time,create_time,update_time) 
+values(1, 1, '8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92', DATE_ADD(now(),INTERVAL 100 YEAR), now(), now());
+
+insert into base_user_login(id,base_user_id,create_time,update_time) 
+values(1, 1, now(), now());
+/********************** weiyong end 20181025 *******************************/
+
 /********************** weiyong start 20190104 *******************************/
 /**** 用户脚本 ***/
 insert into base_user(id,user_account,user_password,user_name,create_time,update_time) 

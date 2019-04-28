@@ -82,8 +82,8 @@ create table attachment_log
    attachment_url       varchar(100) not null default '' comment '附件URL',
    attachment_type      int(1) not null default 1 comment '附件类型 1-图片, 2-文件',
    content              varchar(300) not null default '' comment '附件内容',
-   created              varchar(50) not null default '' comment '创建人',
    update_time          datetime comment '更新时间',
+   create_time          datetime comment '创建时间',
    primary key (id)
 );
 

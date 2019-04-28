@@ -344,7 +344,7 @@ create table user_admin
    enterprise_id        int not null default -1 comment '企业id',
    user_id              int not null default -1 comment '用户id',
    admin_name           varchar(30) not null default '' comment '管理名称',
-   admin_type           int(1) not null default 0 comment '管理类型 1-主管理员, 2-子管理员, 3-负责人, 4-主管',
+   admin_type           int(1) not null default 0 comment '管理类型 1-主管理员, 2-子管理员',
    is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
    remark               varchar(200) not null default '' comment '备注',
    sort                 int not null default 1 comment '排序号',
@@ -352,7 +352,8 @@ create table user_admin
    updated              varchar(50) not null default '' comment '更新人',
    create_time          datetime comment '创建时间',
    update_time          datetime comment '更新时间',
-   primary key (id)
+   primary key (id),
+   key uk_enterprise_user_id (enterprise_id, user_id)
 );
 
 alter table user_admin comment '用户管理表';

@@ -78,8 +78,9 @@ drop table if exists attachment_log;
 create table attachment_log
 (
    id                   bigint not null auto_increment comment '附件日志id',
+   attachment_name      varchar(50) not null default '' comment '附件名称',
    attachment_url       varchar(100) not null default '' comment '附件URL',
-   attachment_type      int(1) not null default 1 comment '附件类型 1-图片, 2-word, 3-pdf',
+   attachment_type      int(1) not null default 1 comment '附件类型 1-图片, 2-文件',
    content              varchar(300) not null default '' comment '附件内容',
    created              varchar(50) not null default '' comment '创建人',
    updated              varchar(50) not null default '' comment '更新人',

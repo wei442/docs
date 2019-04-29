@@ -588,6 +588,25 @@ create table post_attachment
 alter table post_attachment comment '岗位附件表';
 
 
+drop table if exists user_menu;
+
+/*==============================================================*/
+/* Table: user_menu                                             */
+/*==============================================================*/
+create table user_menu
+(
+   id                   int not null auto_increment comment '菜单id',
+   enterprise_id        int not null default -1 comment '企业id',
+   user_id              int not null default -1 comment '用户id',
+   menu_code            varchar(30) not null default '' comment '菜单编码',
+   created              varchar(30) not null default '' comment '创建人',
+   updated              varchar(30) not null default '' comment '更新人',
+   create_time          datetime not null comment '创建时间',
+   update_time          datetime not null comment '更新时间',
+   primary key (id)
+);
+
+alter table user_menu comment '用户菜单表';
 
 
 

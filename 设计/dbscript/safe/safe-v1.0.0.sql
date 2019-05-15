@@ -44,9 +44,9 @@ drop table if exists base_user_info;
 create table base_user_info
 (
    id                   int not null auto_increment comment '基础用户id',
-   user_account         varchar(100) not null default '' comment '用户账号',
-   user_name            varchar(100) not null default '' comment '用户名称',
-   user_name_en         varchar(100) not null default '' comment '用户英文名称',
+   user_account         varchar(50) not null default '' comment '用户账号',
+   user_name            varchar(50) not null default '' comment '用户名称',
+   user_name_en         varchar(50) not null default '' comment '用户英文名称',
    user_type            int(1) not null default 1 comment '用户类型',
    user_status          int(1) not null default 1 comment '用户状态: 1-正常, 2-冻结, 3-注销',
    user_email           varchar(30) not null default '' comment '用户邮箱',

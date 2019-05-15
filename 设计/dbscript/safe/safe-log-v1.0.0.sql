@@ -8,9 +8,9 @@ create table base_user_login_log
 (
    id                   bigint not null auto_increment comment '基础登录日志id',
    base_user_id         int not null default -1 comment '基础用户id',
-   base_user_account    varchar(50) not null default '' comment '用户账号',
-   base_user_name       varchar(50) not null default '' comment '用户名称',
-   base_user_name_en    varchar(50) not null default '' comment '用户英文名称',
+   user_account         varchar(50) not null default '' comment '用户账号',
+   user_name            varchar(50) not null default '' comment '用户名称',
+   user_name_en         varchar(50) not null default '' comment '用户英文名称',
    login_type           int(1) not null default 1 comment '登录类型 1-登录, 2-退出',
    login_time           datetime not null comment '登录或退出时间',
    login_mode           varchar(20) not null default '' comment '登录方式',

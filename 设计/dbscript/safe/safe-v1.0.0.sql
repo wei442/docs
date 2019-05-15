@@ -23,7 +23,7 @@ create table enterprise
    city                 varchar(30) not null default '' comment '城市',
    enterprise_main_category varchar(30) not null default '' comment '企业大类',
    enterprise_sub_category varchar(30) not null default '' comment '企业小类',
-   enterprise_scale     int(1) not null default -1 comment '企业规模 1-1-50人, 2-50-150人, 3-150-500人, 4-500-1000人, 5-1000人以上',
+   enterprise_scale     int(1) not null default 1 comment '企业规模 1-1-50人, 2-50-150人, 3-150-500人, 4-500-1000人, 5-1000人以上',
    is_delete            int(1) not null default 0 comment '删除标识 0-未删除, 1-已删除',
    remark               varchar(200) not null default '' comment '备注',
    sort                 int not null default 1 comment '排序号',

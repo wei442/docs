@@ -1,5 +1,7 @@
 /********************** 邮件数据库 *******************************/
 /********************** weiyong start 20171109 *******************************/
+drop table if exists mail;
+
 /*==============================================================*/
 /* Table: mail                                                  */
 /*==============================================================*/
@@ -18,7 +20,7 @@ create table mail
    status               int(1) not null default 0 comment '状态 0-成功; 1-失败',
    mail_type            int(1) not null default 1 comment '邮件发送类型 1-普通邮件, 2-附件',
    send_time            datetime not null comment '发送时间',
-   source               varchar(10) not null default '' comment '邮件来源',
+   source               varchar(20) not null default '' comment '邮件来源',
    create_time          datetime not null comment '创建时间',
    update_time          datetime not null comment '更新时间',
    primary key (id)
@@ -26,17 +28,19 @@ create table mail
 
 alter table mail comment '邮件发送表';
 
+drop table if exists mail_attachment;
+
 /*==============================================================*/
 /* Table: mail_attachment                                       */
 /*==============================================================*/
 create table mail_attachment
 (
    id                   int not null auto_increment comment '邮件附件id',
-   mail_id              int not null default -1 comment '邮件id',
+   mail_id              int not null auto_increment comment '邮件id',
    file_name            varchar(100) not null default '' comment '附件名称',
    file_path            varchar(100) not null default '' comment '附件目录',
-   create_time          datetime not null comment '创建时间',
-   update_time          datetime not null comment '更新时间',
+   create_time          datetime comment '创建时间',
+   update_time          datetime comment '修改时间',
    primary key (id)
 );
 

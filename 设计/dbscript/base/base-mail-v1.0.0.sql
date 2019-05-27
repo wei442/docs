@@ -1,13 +1,13 @@
 /********************** 邮件数据库 *******************************/
 /********************** weiyong start 20171109 *******************************/
-drop table if exists mail_log;
+drop table if exists mail;
 
 /*==============================================================*/
-/* Table: mail_log                                              */
+/* Table: mail                                                  */
 /*==============================================================*/
-create table mail_log
+create table mail
 (
-   id                   int not null auto_increment comment '邮件日志id',
+   id                   int not null auto_increment comment '邮件id',
    user_name            varchar(50) not null default '' comment '用户名',
    password             varchar(50) not null default '' comment '密码',
    host                 varchar(30) not null default '' comment '主机',
@@ -26,17 +26,17 @@ create table mail_log
    primary key (id)
 );
 
-alter table mail_log comment '邮件日志表';
+alter table mail comment '邮件表';
 
-drop table if exists mail_attachment_log;
+drop table if exists mail_attachment;
 
 /*==============================================================*/
-/* Table: mail_attachment_log                                   */
+/* Table: mail_attachment                                       */
 /*==============================================================*/
-create table mail_attachment_log
+create table mail_attachment
 (
-   id                   int not null auto_increment comment '邮件附件日志id',
-   mail_log_id          int not null auto_increment comment '邮件日志id',
+   id                   int not null auto_increment comment '邮件附件id',
+   mail_id              int not null auto_increment comment '邮件id',
    file_name            varchar(100) not null default '' comment '附件名称',
    file_path            varchar(100) not null default '' comment '附件目录',
    create_time          datetime comment '创建时间',
@@ -44,6 +44,6 @@ create table mail_attachment_log
    primary key (id)
 );
 
-alter table mail_attachment_log comment '邮件附件日志表';
+alter table mail_attachment comment '邮件附件表';
 /********************** weiyong end 20171109 *******************************/
 

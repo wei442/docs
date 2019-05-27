@@ -1,13 +1,13 @@
 /********************** 短信数据库 *******************************/
 /********************** weiyong start 20170905 *******************************/
-drop table if exists sms_log;
+drop table if exists sms;
 
 /*==============================================================*/
-/* Table: sms_log                                               */
+/* Table: sms                                                   */
 /*==============================================================*/
-create table sms_log
+create table sms
 (
-   id                   int not null auto_increment comment '短信发送日志id',
+   id                   int not null auto_increment comment '短信id',
    mobile               varchar(20) not null default '' comment '手机号码',
    content              varchar(200) not null default '' comment '短信内容',
    status               int(1) not null default 0 comment '状态 0-成功; 1-失败',
@@ -19,6 +19,6 @@ create table sms_log
    primary key (id)
 );
 
-alter table sms_log comment '短信发送日志表';
+alter table sms comment '短信表';
 /********************** weiyong end 20170905 *******************************/
 

@@ -36,7 +36,7 @@ drop table if exists mail_attachment;
 create table mail_attachment
 (
    id                   int not null auto_increment comment '邮件附件id',
-   mail_id              int not null auto_increment comment '邮件id',
+   mail_id              int not null default -1 comment '邮件id',
    file_name            varchar(100) not null default '' comment '附件名称',
    file_path            varchar(100) not null default '' comment '附件目录',
    create_time          datetime comment '创建时间',

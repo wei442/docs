@@ -22,4 +22,5 @@ create table user_info
 
 alter table user_info comment '用户信息表';
 
+
 /********************** weiyong end 20190731 *******************************/
